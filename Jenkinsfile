@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'openjdk:8'
-    }
-
-  }
+  agent none
   stages {
     stage('test') {
       steps {
@@ -13,7 +8,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         junit '**/target/surefire-report/*.xml'
       }
